@@ -15,5 +15,10 @@ def index():
             repo_status = "Repository not found!"
     return render_template("index.html", repo_status=repo_status)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if _name_ == "_main_":
+    port = 5000  
+    if "PORT" in os.environ:
+        port = int(os.environ["PORT"])
+    
+   
+    app.run(debug=False, host="0.0.0.0", port=port)
